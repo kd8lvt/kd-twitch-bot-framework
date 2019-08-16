@@ -1,4 +1,8 @@
 class BotLogger {
+    constructor(loggerName) {
+      this.loggerName = loggerName;
+    }
+
     info(msg) {
       this.log('INFO',msg);
     }
@@ -14,7 +18,7 @@ class BotLogger {
     log(level,msg) {
       let now = new Date(Date.now());
       let time = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
-      console.log('['+level+'] '+'['+time+'] '+msg);
+      console.log('['+level+'] '+'['+time+'] ['+this.loggerName+'] '+msg);
     }
 }
 

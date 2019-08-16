@@ -21,6 +21,10 @@ class Bot extends InternalBot {
         this.bot.databases.commands.setValue('commands.'+command,plugin.commands[command]);
       }
     }
+
+    if (plugin.exports) {
+      this.pluginExports[plugin.name] = plugin.exports;
+    }
   }
 
 }
