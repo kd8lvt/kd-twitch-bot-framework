@@ -34,6 +34,7 @@ class InternalBot {
     this.pluginExports = {};
     new Database('users','users.json',{users:{default_user:{permGroups:['user']}}},this.bot)
     new Database('commands','commands.json',{commands:{example_command:{invoke:"★THIS_SHOULD_NEVER_BE_RUN★",response:"How'd you know!?",permissionGroups:['owner']}}},this.bot);
+    this.commands = this.bot.databases.commands.getValue('commands');
     this._finishInit();
   }
 
@@ -70,7 +71,13 @@ class InternalBot {
   parseCommands(chan,userstate,message,bot) {
     let args = message.split(" ");
     let invoke = args.splice(0,1)[0].replace(bot.config.commands.prefix,'');
-    let commandExists = bot.bot.databases.commands.findValue('commands',{invoke:invoke});
+    let commandExists = null;
+    for (let command in bot.commands) {
+        if (bot.commands[command].invoke == invoke) {
+          commandExists = bot.commands[command];
+          break;
+        }
+    }
     if (commandExists !== null) {
       if (commandExists.function) {
         if (bot.commandFunctions[commandExists.function] !== null) {

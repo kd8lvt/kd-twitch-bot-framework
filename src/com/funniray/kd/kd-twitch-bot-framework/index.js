@@ -17,9 +17,9 @@ class Bot extends InternalBot {
       }
     }
     for (let command in plugin.commands) {
-      if (this.bot.databases.commands.getValue('commands.'+command) == null) {
-        this.bot.databases.commands.setValue('commands.'+command,plugin.commands[command]);
-      }
+      //Dynamically load commands, rather than saving them to a file.
+      this.commands[command] = plugin.commands[command];
+
     }
 
     if (plugin.exports) {
