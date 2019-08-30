@@ -18,7 +18,7 @@ class BotLogger {
     log(level,msg) {
       let now = new Date(Date.now());
       let time = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
-      console.log('['+level+'] '+'['+time+'] ['+this.loggerName+'] '+msg);
+      console.log('['+level+'] '+'['+time+'] ['+this.loggerName+'] >> '+msg);
     }
 }
 

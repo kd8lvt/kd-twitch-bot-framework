@@ -35,6 +35,9 @@ class InternalBot {
     new Database('users','users.json',{users:{default_user:{permGroups:['user']}}},this.bot)
     new Database('commands','commands.json',{commands:{example_command:{invoke:"★THIS_SHOULD_NEVER_BE_RUN★",response:"How'd you know!?",permissionGroups:['owner']}}},this.bot);
     this.commands = this.bot.databases.commands.getValue('commands');
+
+    this.commands["hardcoded:botinfo"] = {invoke:'bot',permissionGroup:['user'],response:'This bot is powered by Kd-Twitch-Bot-Framework, designed by kd8lvt. For more information, click this link: https://github.com/kd8lvt/kd-twitch-bot-framework'}
+
     this._finishInit();
   }
 
@@ -79,8 +82,14 @@ class InternalBot {
         }
     }
     if (commandExists !== null) {
+      if (commandExists.permissionNode != null && bot.pluginExports["Kd_PermsPlugin"] !== null) { //If the command requires a permission AND the permissions plugin IS installed:
+        if (!bot.pluginExports["Kd_PermsPlugin"].api.hasPermissionNode(userstate.username,commandExists.permissionNode)) { //If the user does not have the required node:
+          return bot.say(channel,'You do not have permission to use this command.');
+        }
+      }
       if (commandExists.function) {
         if (bot.commandFunctions[commandExists.function] !== null) {
+            }
             bot.commandFunctions[commandExists.function](bot,chan,userstate,args,message);
         }
       } else {
