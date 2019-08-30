@@ -41,6 +41,7 @@ class Database {
 
   getRawDB() {
     //Not recommended!
+    this.reload();
     return this.db;
   }
 }

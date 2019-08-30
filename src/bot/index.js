@@ -55,10 +55,10 @@ class InternalBot {
   }
 
   _finishInit() {
-    this.addListener('message',(channel,userstate,message,self)=>{this.parseMessage(channel,userstate,message,self,this)});
+    this.addListener('message',(channel,userstate,message,self)=>{this._parseMessage(channel,userstate,message,self,this)});
   }
 
-  parseMessage(channel,userstate,message,self,bot) {
+  _parseMessage(channel,userstate,message,self,bot) {
     if (self) return;
     if (bot.bot.databases.users.getValue('users.'+userstate.username) == null) {
       //this.databases.users.setValue('users.'+userstate.username,{permGroups:['user']})
@@ -67,11 +67,11 @@ class InternalBot {
       }
     }
     if (message.startsWith(bot.config.commands.prefix)) {
-      this.parseCommands(channel,userstate,message,bot);
+      this._parseCommands(channel,userstate,message,bot);
     }
   }
 
-  parseCommands(chan,userstate,message,bot) {
+  _parseCommands(chan,userstate,message,bot) {
     let args = message.split(" ");
     let invoke = args.splice(0,1)[0].replace(bot.config.commands.prefix,'');
     let commandExists = null;

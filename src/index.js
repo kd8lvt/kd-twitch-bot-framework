@@ -1,6 +1,7 @@
 let InternalBot = require('./bot/index.js');
 let Plugin = require('./plugin');
 let Logger = require('./bot/logger.js');
+let Command = require('./plugin/Command.js');
 
 class Bot extends InternalBot {
   constructor(optionsUsername,configFile,oauthKey,owner,streams) {
@@ -29,4 +30,4 @@ class Bot extends InternalBot {
 
 }
 
-module.exports = {Bot:Bot,Plugin:Plugin,Logger:Logger};
+module.exports = {Bot:Bot,Plugin:Plugin,Logger:Logger,Command:Command};

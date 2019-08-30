@@ -25,12 +25,12 @@ class KdPuns extends KdFramework.Plugin {
 	}
 
 	createCommands() {
-		this.commands["kdpuns:pun"] = {invoke:'pun'permissionNode:null,function:'pun'};
+		this.commands["kdpuns:pun"] = new KdFramework.Command('pun',null,'pun');
 	}
 
 	createCommandFunctions() {
 		this.commandFunctions.pun = (bot,channel)=> {
-			let joke = http.get({host:'icanhazdadjoke.com',port:433,path:'',headers:{'Accept':'text/plain'}},(res) => {
+			let joke = https.get({host:'icanhazdadjoke.com',port:433,path:'',headers:{'Accept':'text/plain'}},(res) => {
 				if (res.statusCodde !== 200) {
 					bot.say(channel,'I couldn\'t find a pun... maye try some other time?');
 				} else {
@@ -43,7 +43,7 @@ class KdPuns extends KdFramework.Plugin {
 	}
 }
 
-module.exports = KdPun;
+module.exports = KdPuns;
 ```
 
 #Adding it to your bot
