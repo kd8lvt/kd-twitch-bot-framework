@@ -13,4 +13,4 @@ let bot = new KdFramework.Bot("username","C:\\path\\to\\config.json","twitch oau
 bot.connect();
 ```
 
-And that's all you need for a simple bot! To make commands (especially those with custom functionality) you'll need a [plugin](https://kd-twitch-bot-framework.readthedocs.io/)!
+And that's all you need for a simple bot! To make commands (especially those with custom functionality) you'll need a [plugin](https://kd-twitch-bot-framework.readthedocs.io/en/latest/plugin)!
