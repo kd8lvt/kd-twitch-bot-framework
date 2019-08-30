@@ -1,5 +1,5 @@
 site_name: kd-twitch-bot-framework
-site_url: kd-twitch-bot-framework.readthedocs.io
+site_url: https://kd-twitch-bot-framework.readthedocs.io
 repo_url: https://github.com/kd8lvt/kd-twitch-bot-framework/
 repo_name: 'GitHub'
 nav:
