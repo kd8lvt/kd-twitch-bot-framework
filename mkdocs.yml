@@ -3,7 +3,7 @@ site_url: https://kd-twitch-bot-framework.readthedocs.io
 repo_url: https://github.com/kd8lvt/kd-twitch-bot-framework/
 repo_name: 'GitHub'
 nav:
-    - 'Introduction': 'index.md'
-    - 'Plugins': 'plugin.md'
-docs_dir: '../documentation'
-site_dir: '../site'
+    - 'Introduction': 'documentation/index.md'
+    - 'Plugins': 'documentation/plugin.md'
+docs_dir: 'documentation'
+site_dir: 'site'
