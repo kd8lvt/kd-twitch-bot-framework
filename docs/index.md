@@ -3,8 +3,10 @@ This framework is designed to make designing [Twitch.tv](https://twitch.tv) chat
 Simply download [node.js](https://nodejs.org) and require the package!
 
 In your shell of choice:
-`npm init -y`
-`npm i --save kd-twitch-bot-framework`
+```
+$ init -y
+$ npm i --save kd-twitch-bot-framework
+```
 
 In your main bot file:
 ```Javascript
