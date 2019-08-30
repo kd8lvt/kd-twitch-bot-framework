@@ -1,5 +1,5 @@
 #Command
-Commands are the backbonem of any chat-bot, and this framework aims to make them as simple as possible...
+Commands are the backbone of any chat-bot, and this framework aims to make them as simple as possible...
 
 ##Creating a Command
 Creating a command is as simple as creating a `new` instance of the class, and applying it to your Plugin.

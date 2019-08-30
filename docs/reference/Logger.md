@@ -4,7 +4,7 @@ The logger is used to send formatted messages to the console.
 ##Creating a logger
 Loggers are created automatically, but if for some reason you *need* to make another one, here's how:
 ```Javascript
-const Logger = require('kd-twitch-bot-framework.Logger;
+const Logger = require('kd-twitch-bot-framework').Logger;
 let logger = new Logger('logger-name');
 ```
 
