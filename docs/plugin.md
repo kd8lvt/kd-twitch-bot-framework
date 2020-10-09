@@ -31,7 +31,7 @@ class KdPuns extends KdFramework.Plugin {
 	createCommandFunctions() {
 		this.commandFunctions.pun = (bot,channel)=> {
 			let joke = https.get({host:'icanhazdadjoke.com',port:433,path:'',headers:{'Accept':'text/plain'}},(res) => {
-				if (res.statusCodde !== 200) {
+				if (res.statusCode !== 200) {
 					bot.say(channel,'I couldn\'t find a pun... maye try some other time?');
 				} else {
 					res.on('data',(d) =>{
