@@ -13,7 +13,7 @@ const https = require('https');
 
 class KdPuns extends KdFramework.Plugin {
 	constructor(bot) {
-		super('KdPuns');
+		super('KdPuns',bot);
 		this.bot = bot;
 	}
 
